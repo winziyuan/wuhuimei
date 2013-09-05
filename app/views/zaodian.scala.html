@@ -1,5 +1,6 @@
-@base{
 
+@(list : List[ZaoDian])
+@base{
  <div class="page-header">
         <h4>早点列表</h4>
       </div>
@@ -46,7 +47,33 @@
           </tr>
         </thead>
         <tbody>
-        
+    @for(l <- list) {
+ <tr style="height: 90px;text-align: center;">
+          <td>
+          <input type="checkbox"  name="" value="option1">
+          </td>
+          <td >@l.getName()</td>
+          <td>@l.getPrice()</td>
+          <td>@l.getSell_num()</td>
+          <td>@l.getSell_pri()</td>
+          <td></td>
+          <td></td>
+          <td>@l.getLike_num()</td>
+          <td>@l.getSub_num()</td>
+          <td>@l.getOrder1_num()/@l.getOrder1_num()</td>
+          <td>@l.getState()</td>
+          <td>@l.getCreatetime()</td>
+          <td>
+          <a>删除</a>
+          <a>编辑</a>
+          </td>
+          
+          </tr>
+ 
+ 
+} 
+          
+         
           
         </tbody>
         <form method="get" id="user_get_page" action="/admincategory/get_category">

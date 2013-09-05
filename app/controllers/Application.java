@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,7 +23,8 @@ import java.util.Set;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeUtility;
 
-import model.user;
+import models.ZaoDian;
+import models.user;
 
 
 import org.apache.commons.io.IOUtils;
@@ -41,6 +43,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.bson.types.ObjectId;
+
 
 
 
@@ -779,8 +782,17 @@ public class Application extends Controller {
     }
     //////// login
     public static Result zaodian() {
+    	Map<String, Object> map=query("test", "zaodian", new HashMap<String, Object>(), 0, 20);
+    	System.out.println(map.get("num"));
     	
-    	return ok(views.html.zaodian.render());
+    	ArrayList<ZaoDian> list=(ArrayList<ZaoDian>) map.get("list");
+    	for(ZaoDian o : list){
+    		System.out.println(o.getIcon());
+    		
+    	}
+    
+   
+    	return ok(views.html.zaodian.render(list));
     }
     //////// login
     public static Result add_zaodian() {
@@ -812,6 +824,9 @@ public class Application extends Controller {
     	map2save("test", "zaodian", append);
     	return ok();
     }
+    
+    
+    
     //////// login
     public static Result login12() {
     	
@@ -883,8 +898,53 @@ public class Application extends Controller {
     	return null;
     }
     
-    
-    
+
+    public static long getpagecount(long num,long len){
+    	long count=(num/len);
+    	return (num>(count*len))==true?count+1:count; 	
+    }
+    public static Map<String, Object> query(String database,String collection,Map<String, Object> map,int skip,int len){
+    	MongoClient client=null;
+    	DB db2=null;
+    	DBCollection coll=null;
+    	List<ZaoDian> list=null;
+    	try {
+			client=getmongoclient();
+			  db2 = client.getDB(database);
+			 coll = db2.getCollection(collection);
+			 coll.setObjectClass(ZaoDian.class);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	db2.requestStart();
+
+    	BasicDBObject query = new BasicDBObject();
+    	query.putAll(map);
+    	long pagenum=getpagecount(coll.count(query), len);
+
+    	
+    	BasicDBObject order = new BasicDBObject()
+    	.append("createtime", -1)
+    	.append("_id", -1);
+    	DBCursor cursor2=coll.find(query).sort(order).skip(skip).limit(len);
+    	 list=new ArrayList<>();
+		try {
+			 while(cursor2.hasNext()) {
+				 ZaoDian zao=(ZaoDian)cursor2.next() ;
+				 list.add(zao);
+			   }
+			
+		} finally {
+			cursor2.close();
+			db2.requestDone();
+			client.close();
+		}
+    	Map<String, Object> map2=new HashMap<>();
+    	map2.put("num", pagenum);
+    	map2.put("list", list);
+		return map2;
+    }
     
     
     
