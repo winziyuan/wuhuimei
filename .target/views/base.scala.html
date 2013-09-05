@@ -1,0 +1,151 @@
+@(content: Html)
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=7"/>
+<meta charset="utf-8">
+<title>wuhuimei</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="david">
+<!-- Le styles -->
+
+
+
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+ <script src="@routes.Assets.at("javascripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+ <script src="@routes.Assets.at("javascripts/base.js")" type="text/javascript"></script>
+ <script src="@routes.Assets.at("javascripts/entity.js")" type="text/javascript"></script>
+   <script src="http://files.cnblogs.com/rubylouvre/bootstrap-dropdown.js"></script>
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/docs.css")">
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.fileupload-ui.css")">
+
+ <script>
+            $(function(){
+                //注意：事件要绑定在UI容器上，而不是关闭按钮中
+                $('.dropdown-toggle').dropdown()
+            })
+   
+            
+            
+</script>
+        
+<script>
+var host="http://localhost:9000/";
+var img_host = "http://dev.ihuanyue.me:8080/media/pic/";
+var a = 1;
+function selectAll() 
+{ 
+	var el=document.getElementsByName("checkbox"); 
+	if(a == 2)
+	{
+		a =1;
+		for (var i=0;i<el.length;i++) 
+		{ 
+			if(el[i].type=="checkbox") 
+			{ 
+				el[i].checked=false; 
+			} 
+		} 
+	}else{
+		a = 2;
+		for (var i=0;i<el.length;i++) 
+		{ 
+			if(el[i].type=="checkbox") 
+			{ 
+				el[i].checked=true; 
+			} 
+		} 
+	}
+} 
+//全选 end
+</script>
+</head>
+
+
+
+
+
+  <body >
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+       
+         
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+            
+            
+              <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>首页</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/admin/get_version">每日推荐</a></li>
+              <li><a href="/admin/sys_apns">最热</a></li> 
+              <li><a href="/adminversion/word">敏感词</a></li>         
+              <!--<li><a href="/admingift/show">礼物管理</a></li>
+              <li><a href="/admingiftrecord/show">内容-礼品配送管理</a></li> -->             
+            </ul>
+          </li>
+            <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>创建</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/category">分类</a></li>
+              <li><a href="/subscribe">订阅服务</a></li>                               
+            </ul>
+          </li>
+           <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>分类</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/zaodian">早点</a></li>
+              <li><a href="/admin/sys_apns">下午茶</a></li> 
+              <li><a href="/adminversion/word">小吃</a></li>         
+              <li><a href="/adminversion/word">甜品</a></li>               
+              <!--<li><a href="/admingift/show">礼物管理</a></li>
+              <li><a href="/admingiftrecord/show">内容-礼品配送管理</a></li> -->             
+            </ul>
+          </li>
+               
+              <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>用户</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/user">用户列表</a></li>
+              <li><a href="/admin/sys_apns">通知</a></li> 
+              <li><a href="/adminversion/word">用户建议</a></li>                                     
+            </ul>
+          </li>
+            
+              <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>服务</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/admin/get_version">订单列表</a></li>
+              <li><a href="/admin/sys_apns">订阅列表</a></li> 
+                           
+            </ul>
+          </li>
+              <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle"data-toggle="dropdown"><b class="ic5"></b>统计</a>
+            <ul class="dropdown-menu">       
+              <li><a href="/admin/get_version">页面点击</a></li>
+              <li><a href="/admin/sys_apns">实体like</a></li> 
+              <li><a href="/adminversion/word">实体购买</a></li>         
+              <li><a href="/adminversion/word">实体关注</a></li>         
+              <li><a href="/adminversion/word">订阅</a></li>                                
+            </ul>
+          </li>
+             
+              
+              
+              
+              
+              
+       
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="container">
+        @content
+      </div>
+
+ <iframe src="" style="display:none;" name="ifa" id="ifa"></iframe>
+
+</body>
+</html>

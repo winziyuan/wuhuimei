@@ -1,0 +1,56 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Hello action
+#GET     /hello                      controllers.Application.sayHello()
+GET     /emailt                      controllers.Application.emailt()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+################
+POST     /filet                      controllers.Application.filet()
+GET     /pic/*id              controllers.Application.r_filet(id)
+POST     /soct              controllers.Application.soct()
+GET  /socv            controllers.Application.socv()
+GET  /htmlt            controllers.Application.htmlt()
+GET  /user            controllers.Application.user()
+GET  /add_user            controllers.Application.add_user()
+
+
+
+GET  /login            controllers.Application.login()
+GET  /index            controllers.Application.index()
+GET  /profile            controllers.Application.profile()
+GET  /category            controllers.Application.category()
+GET  /add_category            controllers.Application.add_category()
+GET  /zaodian            controllers.Application.zaodian()
+GET  /add_zaodian           controllers.Application.add_zaodian()
+#######
+POST  /zaodian_save           controllers.Application.zaodian_save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/profile.css")">
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/docs.css")">
+
+
+
+
+
+
+
+  </head>
+  <body>
+  
+<!--   <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+  
+  <div class="container">
+       <ul class="nav pull-right">
+  
+<li>    <a class="brand" href="#">Title</a></li>
+  </ul>
+    <ul class="nav">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  
+  </div>
+     </div>
+</div> --> 
+  
+  
+  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">      
+                <a href="/" class="a-c">index</a>
+              </li>
+               
+              
+              
+              
+              
+              
+              
+              <li class="">
+                <a href="zao.html" class="a-c"  data-bootstro-placement="bottom" data-bootstro-step="0">zaodian</a>
+              </li>
+              <li class="">
+                <a href="scaffolding.html" class="a-c" data-bootstro-placement="bottom" data-bootstro-step="1">xiawucha</a>
+              </li>
+         
+
+              <li class="">
+                <a href="about.html" class="a-c">about</a>
+              </li>
+              <li >
+              
+              </li>
+            </ul>
+          </div>
+           <div style="float: right;margin-top: 9px;">
+          <a href="login.html" class="a-c" >login</a> <span class="a-c">/</span> <a href="register.html" class="a-c">register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+
+  
+  <div class="container">
+  
+  <div class="row">
+         <div class="span2 bs-docs-sidebar">
+       <ul class="span2 nav nav-list bs-docs-sidenav affix-top">
+            <li class="span2 active"><a href="profile.html">帐号信息</a></li>
+          <li class="span2"><a href="profile4.html">关注/收藏</a></li>
+          <li class="span2 "><a href="profile5.html"> 我的订单</a></li>
+          <li class="span2"><a href="profile7.html">消息通知</a></li>
+          <li class="span2"><a href="profile6.html">订阅服务</a></li>
+          <li class="span2"><a href="profile2.html">地址管理</a></li>
+          <li class="span2"><a href="profile3.html">安全中心</a></li>
+          <li class="span2"><a href="#what-next">在线客服</a></li>
+          <li class="span2"><a href="profile8.html">我的建议</a></li>
+        </ul>
+         
+       
+      </div>
+      
+     
+<div class="span9" style="position:relative; margin-left: 60px;">
+
+
+<div class="page-header">
+
+  <h4 class="d-d">基本信息</h4>
+  </div>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">用户名</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" value="name">
+    </div>
+  </div>
+  <div class="control-group ">
+    <label class="control-label " for="inputPassword">手机</label>
+    <div class="controls inline">
+       
+      <span >126542153587</span>&nbsp;&nbsp;&nbsp; <a>edit</a>
+    
+    </div>
+  </div>
+   <div class="control-group">
+    <label class="control-label" for="inputPassword">邮箱</label>
+    <div class="controls">
+      <label class="inline">
+       
+      <span>winziyuan163.com</span>&nbsp;&nbsp;&nbsp;<a>check</a>
+       </label>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">adress</label>
+    <div class="controls">
+      <input type="text" id="inputPassword" value="eeessssssssssettttttttttt">
+    </div>
+  </div>
+  
+
+<div class="page-header">
+
+  <h4 class="d-d">详细信息</h4>
+  </div>
+
+
+ <div class="control-group">
+    <label class="control-label" for="inputEmail">age</label>
+    <div class="controls">
+      <select class="select">
+  <option value="">selected</option>
+  <option>10->18</option>
+  <option selected="selected">18->30</option>
+  <option>30->45</option>
+  <option>45->60</option>
+  <option>60->100</option>
+  <option>100-></option>
+</select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">sex</label>
+    <div class="controls">
+    <label class="radio inline">
+ <input type="radio"  name="sex" id="male" checked="checked">male
+ </label>
+ <label class="radio inline">
+ 
+ <input type="radio"  name="sex" id="female">female
+ </label>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">marry</label>
+    <div class="controls">
+    <label class="radio inline">
+ <input type="radio"  name="marry" id="marry_t" checked="checked">true
+ </label>
+ <label class="radio inline">
+ 
+ <input type="radio"  name="marry" id="marry_f">false
+ </label>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">salary</label>
+    <div class="controls">
+      <select class="select">
+  <option value="">selected</option>
+  <option>->1000</option>
+  <option>1000->3000</option>
+  <option selected="selected">3000->7000</option>
+  <option>7000->10000</option>
+  <option>10000->15000</option>
+  <option>15000-></option>
+</select>
+    </div>
+  </div>
+  
+  
+    <div class="control-group">
+    <label class="control-label" for="inputPassword">buy max</label>
+    <div class="controls">
+      <select class="select">
+  <option value="">selected</option>
+  <option> ->10</option>
+  <option selected="selected">10->30</option>
+  <option>30-></option>
+
+</select>
+    </div>
+  </div>
+
+ <div class="control-group">
+    <div class="controls">
+     
+      <button type="submit" class="btn">submit</button>
+    </div>
+  </div>
+
+
+
+
+</form>
+
+
+
+
+
+
+
+     </div>
+     
+     
+     
+  </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+     
+     
+ 
+
+
+
+
+
+
+
+
+
+
+  
+  </div>
+  
+  
+
+ 
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

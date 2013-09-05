@@ -1,0 +1,66 @@
+@base{
+
+ <div class="page-header">
+        <h4>分类列表</h4>
+      </div>
+	
+	  
+	  <form class="well pan form-inline" method="post" id="user_post_page" action="/admincategory/get_category">
+	  	<input type="hidden" name="page_post" id="page_post" value="{{page}}"/>
+        <input type="hidden" name="count_post" id="count_post" value="{{count}}"/>
+        <div>
+        <p style="float: left;margin-right: 30px">关&nbsp; 键&nbsp; 词
+          <input type="text" name="word" value=""></p>
+        <p >开始时间
+        <input type="text" name="starttime" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly value=""></p>
+     </div>
+        <p>结束时间
+        <input type="text" name="endtime" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" readonly value=""></p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-success" id="search">搜索</button>
+        </p>
+        <div class="clear"></div>
+      </form>
+                 
+	 <div style="float: right;margin-bottom: 20px">
+	 <button class="btn" onclick="window.location='/add_category'" >添加分类</button>
+	 <button class="btn" onclick="del_category('',1)">删除</button>
+	 <span id="error_content_id" class="yell"></span></div>
+	  <table class="table table-striped table-bordered table-condensed ter">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="inlineCheckbox" onclick="selectAll()" name="" value="option1">&nbsp;全选</th>
+            <th>分类名称</th>
+            <th>说明</th>
+            <th>创建时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          
+        </tbody>
+        <form method="get" id="user_get_page" action="/admincategory/get_category">
+	        <input type="hidden" name="page_get" id="page_get" value="{{page}}"/>
+	        <input type="hidden" name="count_get" id="count_get" value="{{count}}"/>
+	        <input type="hidden" name="method_type" id="method_type" value="{{method_type}}"/>
+       </form>
+      </table>
+      <!--
+       <div class="pagination">
+      	<input type="hidden" name="method_type" id="method_type" value="{{method_type}}"/>
+        <ul>
+          <li {% if page=="1" %} class="disabled" {% endif %}><a href="javascript:void(0);" disabled id="page_on" >上一页</a></li>
+          <li {% if page==count %}class="disabled" {% endif %}><a href="javascript:void(0);" id="page_under">下一页</a></li>		  
+        </ul>
+		<ul>第<strong class="red">{{page}}</strong>页/共{{count}}页</ul>
+		<ul>跳转至 <input type="text" id="page_go_number" placeholder="1" class="span1"> 页　<button class="btn" id="page_go">确定</button></ul>
+      </div>-->
+	  <div class="clear"></div>
+
+
+
+
+
+}

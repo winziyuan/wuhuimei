@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>aaaaaaa</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.6.4.min.js")" type="text/javascript"></script>
+<script src="http://easywebsocket.org/easyWebSocket.min.js"></script>
+	<script>
+	    var socket = new EasyWebSocket("http://localhost:9002/soct");
+	    socket.onopen = function(){
+		socket.send("hello world!")
+	    }
+	    socket.onmessage = function(event){
+		alert("received "+ event.data)
+	    }
+	</script>
+    </head>
+    <body>
+        
+     
+        
+        <section>
+           test soct
+        </section>
+        
+    </body>
+</html>
