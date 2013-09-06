@@ -946,7 +946,35 @@ public class Application extends Controller {
 		return map2;
     }
     
-    
+    public static void delete(String database,String collection,Map<String, Object> map){
+    	
+      	MongoClient client=null;
+    	DB db2=null;
+    	DBCollection coll=null;
+
+    	try {
+			client=getmongoclient();
+			  db2 = client.getDB(database);
+			 coll = db2.getCollection(collection);
+
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	db2.requestStart();
+
+    	BasicDBObject query = new BasicDBObject(map);
+    	
+		try {
+			coll.remove(query);
+			
+		} finally {
+	
+			db2.requestDone();
+			client.close();
+		}
+    	
+    }
     
     
     
